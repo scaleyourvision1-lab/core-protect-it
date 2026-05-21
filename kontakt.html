@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Core Protect IT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="header scrolled" id="header">
+    <nav class="nav wrap">
+      <a href="index.html" class="nav__logo"><img src="images/logo.svg" alt="Core Protect IT" /></a>
+      <div class="nav__center">
+        <a href="leistungen.html">Leistungen</a>
+        <a href="loesungen.html">Lösungen</a>
+        <a href="partner.html">Partner</a>
+        <a href="ueber-uns.html">Über uns</a>
+      </div>
+      <div class="nav__right">
+        <span class="nav__status"><span class="nav__status__dot"></span>Sys: Secure</span>
+        <a href="kontakt.html" class="btn btn-green">Kontakt</a>
+      </div>
+      <button class="nav__burger" id="burger"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+  <div class="nav-mobile-links" id="mobileNav">
+    <a href="leistungen.html">Leistungen</a>
+    <a href="loesungen.html">Lösungen</a>
+    <a href="partner.html">Partner</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="wrap page-hero__inner">
+      <p class="page-hero__kicker">Sprechen Sie mit uns</p>
+      <h1><span>Kontakt</span></h1>
+      <p>Kostenlose Erstberatung – wir melden uns innerhalb von 24 Stunden.</p>
+    </div>
+  </section>
+
+  <section class="s">
+    <div class="wrap">
+      <div class="contact-grid reveal">
+        <div class="c-info">
+          <h3>So erreichen Sie uns</h3>
+          <div class="c-item">
+            <div class="c-ico">📞</div>
+            <div class="c-txt"><strong>Telefon</strong><span>+49 (0) 2772 70 90 590</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico">✉️</div>
+            <div class="c-txt"><strong>E-Mail</strong><span>info@core-protect.de</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico">⚡</div>
+            <div class="c-txt"><strong>Reaktionszeit</strong><span>Innerhalb von 24 Stunden</span></div>
+          </div>
+          <div class="c-item">
+            <div class="c-ico">🌐</div>
+            <div class="c-txt"><strong>Remote Support</strong><span>Bundesweit verfügbar</span></div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--bg);border:1px solid var(--rule);border-radius:10px;">
+            <span class="label label--green" style="display:block;margin-bottom:12px;">Status · Live</span>
+            <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.875rem;font-weight:600;color:var(--ink);">
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--green);flex-shrink:0;"></span>
+              Alle Systeme betriebsbereit
+            </div>
+          </div>
+        </div>
+
+        <form class="form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-g">
+              <label for="vorname">Vorname *</label>
+              <input type="text" id="vorname" name="vorname" required placeholder="Max" />
+            </div>
+            <div class="form-g">
+              <label for="nachname">Nachname *</label>
+              <input type="text" id="nachname" name="nachname" required placeholder="Mustermann" />
+            </div>
+          </div>
+          <div class="form-g">
+            <label for="email">E-Mail *</label>
+            <input type="email" id="email" name="email" required placeholder="max@firma.de" />
+          </div>
+          <div class="form-row">
+            <div class="form-g">
+              <label for="firma">Unternehmen</label>
+              <input type="text" id="firma" name="firma" placeholder="Musterfirma GmbH" />
+            </div>
+            <div class="form-g">
+              <label for="tel">Telefon</label>
+              <input type="tel" id="tel" name="tel" placeholder="+49 000 000000" />
+            </div>
+          </div>
+          <div class="form-g">
+            <label for="thema">Ich interessiere mich für</label>
+            <select id="thema" name="thema">
+              <option value="">Bitte wählen…</option>
+              <option>IT-Sicherheitsanalyse (kostenlos)</option>
+              <option>Endpoint- & Server-Schutz</option>
+              <option>Backup-Lösung</option>
+              <option>Schwachstellenscanning</option>
+              <option>Darknet-Monitoring</option>
+              <option>E-Mail-Sicherheit</option>
+              <option>NIS2 / KRITIS Compliance</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-g">
+            <label for="msg">Nachricht</label>
+            <textarea id="msg" name="msg" placeholder="Beschreiben Sie kurz Ihre Situation oder Frage…"></textarea>
+          </div>
+          <p class="form-note">* Pflichtfelder. Ihre Daten werden vertraulich behandelt und nicht weitergegeben.</p>
+          <button type="submit" class="btn btn-black btn-lg" style="width:100%;justify-content:center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width:16px;height:16px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Anfrage senden
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand"><img src="images/logo.svg" alt="Core Protect IT" /><p>IT-Sicherheit, die wirklich schützt.</p></div>
+      <div class="footer__col"><h5>Leistungen</h5><a href="leistungen.html">Endpoint-Schutz</a><a href="leistungen.html">Backup</a><a href="leistungen.html">NIS2</a></div>
+      <div class="footer__col"><h5>Unternehmen</h5><a href="ueber-uns.html">Über uns</a><a href="partner.html">Partner</a><a href="kontakt.html">Kontakt</a></div>
+      <div class="footer__col"><h5>Kontakt</h5><p>+49 (0) 2772 70 90 590</p><p>info@core-protect.de</p></div>
+    </div>
+    <div class="wrap footer__btm">
+      <p>&copy; 2026 Core Protect IT GmbH & Co KG</p>
+      <div class="footer__btm-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
