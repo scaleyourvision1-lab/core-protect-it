@@ -620,6 +620,38 @@ p { line-height: 1.75; }
 .footer__btm a:hover { color: var(--green); }
 .footer__btm-links { display: flex; gap: 24px; }
 
+/* ===== Image Placeholder ===== */
+.img-ph {
+  background: var(--bg-off); border: 1.5px dashed var(--rule);
+  border-radius: 10px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  position: relative; overflow: hidden; user-select: none;
+}
+.img-ph svg { width: 32px; height: 32px; color: var(--ink-3); opacity: 0.28; flex-shrink: 0; }
+.img-ph__label {
+  font-family: var(--font-mono); font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); opacity: 0.45;
+}
+/* Dark variant for use inside dark containers */
+.img-ph--dark {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.08);
+  border-radius: 0;
+}
+.img-ph--dark svg { color: #fff; opacity: 0.15; }
+.img-ph--dark .img-ph__label { color: rgba(255,255,255,0.2); opacity: 1; }
+
+/* Partner logo slot */
+.partner-logo-ph {
+  height: 56px; background: var(--bg); border: 1px dashed var(--rule);
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+}
+.partner-logo-ph svg { width: 22px; height: 22px; color: var(--ink-3); opacity: 0.25; }
+
+/* Wide banner placeholder */
+.img-ph--banner { width: 100%; height: 320px; border-radius: 12px; }
+
 /* ===== Reveal ===== */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.in { opacity: 1; transform: none; }
