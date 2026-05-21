@@ -44,15 +44,15 @@
   <section class="hero">
     <div class="hero__top">
       <div class="hero__headline-wrap">
-        <div>
+
+        <!-- LEFT: text -->
+        <div class="hero__left">
           <div class="hero__kicker">
             <span class="hero__kicker-dot"></span>
             <span class="hero__kicker-text">KI-gestützte Cybersecurity · Aktiv seit 2024</span>
           </div>
           <h1 class="display">Wir stoppen<br><span class="accent">Cyber&shy;angriffe.</span></h1>
-        </div>
-        <div class="hero__side">
-          <p class="hero__side-text">Mehrschichtiger Schutz für Ihr Unternehmen – von der KI-Erkennung über unveränderliche Backups bis zur NIS2-Compliance. Für Mittelstand, Behörden und kritische Infrastrukturen.</p>
+          <p class="hero__desc">Mehrschichtiger Schutz für Ihr Unternehmen – von der KI-Erkennung über unveränderliche Backups bis zur NIS2-Compliance. Für Mittelstand, Behörden und kritische Infrastrukturen.</p>
           <div class="hero__cta">
             <a href="kontakt.html" class="btn btn-black btn-lg">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -61,6 +61,55 @@
             <a href="leistungen.html" class="btn btn-outline btn-lg">Leistungen</a>
           </div>
         </div>
+
+        <!-- RIGHT: security console visual -->
+        <div class="hero__visual">
+          <div class="sec-console">
+            <div class="sec-console__bar">
+              <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+              <span class="sc-title">CoreProtect · Security Dashboard</span>
+            </div>
+            <div class="sec-console__body">
+              <div class="sec-alert">
+                <span class="sec-alert__badge">GEBLOCKT</span>
+                <div class="sec-alert__text">
+                  <strong>Ransomware-Angriff neutralisiert</strong>
+                  <span>Endpoint: WS-142 · via KI-Engine · vor 3 Sek.</span>
+                </div>
+                <span class="sec-alert__ts">09:42:14</span>
+              </div>
+              <div class="sec-metrics">
+                <div class="sec-metric">
+                  <span class="sec-metric__label">Scans / Std.</span>
+                  <span class="sec-metric__val sec-metric__val--green" id="scanCount">14.832</span>
+                </div>
+                <div class="sec-metric">
+                  <span class="sec-metric__label">Aktive Bedrohungen</span>
+                  <span class="sec-metric__val sec-metric__val--green">0</span>
+                </div>
+                <div class="sec-metric">
+                  <span class="sec-metric__label">Endpoints</span>
+                  <span class="sec-metric__val">247</span>
+                </div>
+              </div>
+              <div class="sec-log">
+                <div class="sec-log__line"><span class="log-time">09:42:14</span><span class="log-ok">BLOCK</span><span class="log-msg">Ransomware isoliert – WS-142</span></div>
+                <div class="sec-log__line"><span class="log-time">09:41:55</span><span class="log-ok">OK</span><span class="log-msg">Backup abgeschlossen · 3.2 TB gesichert</span></div>
+                <div class="sec-log__line"><span class="log-time">09:41:38</span><span class="log-warn">WARN</span><span class="log-msg">Phishing-Mail blockiert · fake-domain.ru</span></div>
+                <div class="sec-log__line"><span class="log-time">09:41:20</span><span class="log-ok">OK</span><span class="log-msg">Darknet-Scan: Keine Treffer für core-protect.de</span></div>
+                <div class="sec-log__line"><span class="log-time">09:41:01</span><span class="log-ok">OK</span><span class="log-msg">NIS2-Compliance-Check: Bestanden ✓</span></div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                  <span style="font-family:var(--font-mono);font-size:0.62rem;color:rgba(255,255,255,.25);">Live-Scan läuft</span>
+                  <span style="font-family:var(--font-mono);font-size:0.62rem;color:var(--green);">247/247 Endpoints</span>
+                </div>
+                <div class="sec-scan"><div class="sec-scan__bar"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="hero__rule"></div>
@@ -185,40 +234,22 @@
           <a href="leistungen.html" class="btn btn-black">Mehr erfahren</a>
         </div>
         <div class="feature__vis">
-          <div class="sec-console__bar">
+          <div class="term-bar">
             <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
             <span class="term-title">CoreProtect · Threat Monitor</span>
           </div>
-          <div class="sec-console__body">
-            <div class="sec-alert">
-              <span class="sec-alert__badge">GEBLOCKT</span>
-              <div class="sec-alert__text">
-                <strong>Ransomware-Angriff neutralisiert</strong>
-                <span>Endpoint: WS-142 · via KI-Engine · vor 3 Sek.</span>
-              </div>
-              <span class="sec-alert__ts">09:42:14</span>
-            </div>
-            <div class="sec-metrics">
-              <div class="sec-metric">
-                <span class="sec-metric__label">Scans / Std.</span>
-                <span class="sec-metric__val sec-metric__val--green" id="scanCount">14.832</span>
-              </div>
-              <div class="sec-metric">
-                <span class="sec-metric__label">Aktive Bedrohungen</span>
-                <span class="sec-metric__val sec-metric__val--green">0</span>
-              </div>
-              <div class="sec-metric">
-                <span class="sec-metric__label">Endpoints</span>
-                <span class="sec-metric__val">247</span>
-              </div>
-            </div>
-            <div class="sec-log">
-              <div class="sec-log__line"><span class="log-time">09:42:14</span><span class="log-ok">BLOCK</span><span class="log-msg">Ransomware isoliert – WS-142</span></div>
-              <div class="sec-log__line"><span class="log-time">09:41:55</span><span class="log-ok">OK</span><span class="log-msg">Backup abgeschlossen · 3.2 TB gesichert</span></div>
-              <div class="sec-log__line"><span class="log-time">09:41:38</span><span class="log-warn">WARN</span><span class="log-msg">Phishing-Mail blockiert · info@fake-domain.ru</span></div>
-              <div class="sec-log__line"><span class="log-time">09:41:20</span><span class="log-ok">OK</span><span class="log-msg">Darknet-Scan: Keine Treffer</span></div>
-            </div>
-            <div class="sec-scan"><div class="sec-scan__bar"></div></div>
+          <div class="term-body">
+            <div class="t-dim">$ core-protect --scan --realtime --endpoints=all</div>
+            <div class="t-green">✓ KI-Engine v4.2 initialisiert</div>
+            <div class="t-dim">  Verbinde 247 Endpoints...</div>
+            <div class="t-green">✓ WS-001 bis WS-246 — sauber</div>
+            <div class="t-red">⚠ WS-142 — Anomalie erkannt [Ransomware]</div>
+            <div class="t-green">  → Endpoint automatisch isoliert [12ms]</div>
+            <div class="t-green">  → Ransomware-Signatur blockiert</div>
+            <div class="t-green">  → Backup-Snapshot erstellt</div>
+            <div class="t-white">✓ Bedrohung neutralisiert in 0.38s</div>
+            <div class="t-dim">  Scan fortgesetzt — WS-247...</div>
+            <div class="t-green">✓ Alle Systeme sicher<span class="t-cursor"></span></div>
           </div>
         </div>
       </div>
