@@ -569,7 +569,7 @@ p { line-height: 1.75; }
 .sol__vis::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 50%, rgba(176,200,29,.06) 0%, transparent 65%); }
 
 /* ===== Partner cards ===== */
-.partner-cards { display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 1px; background: var(--rule); border-radius: 12px; overflow: hidden; }
+.partner-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1px; background: var(--rule); border-radius: 12px; overflow: hidden; }
 .partner-card { background: var(--white); padding: 32px; transition: background var(--t); }
 .partner-card:hover { background: var(--bg); }
 .partner-card__name { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--green-dk); margin-bottom: 8px; }
