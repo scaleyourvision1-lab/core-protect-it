@@ -228,6 +228,7 @@ p { line-height: 1.75; }
   justify-content: flex-end; padding: 0;
   position: relative; overflow: hidden;
   background: var(--d);
+  isolation: isolate;
 }
 
 /* Video background — top:-120px clips YT title bar via overflow:hidden on .hero */
@@ -247,9 +248,10 @@ p { line-height: 1.75; }
   border: none;
   pointer-events: none;
 }
-/* Explicit block div in HTML catches mouse events — YT controls never appear */
+/* Explicit block div — GPU layer forces render above iframe compositing */
 .hero__vid-block {
   position: absolute; inset: 0; z-index: 1;
+  transform: translateZ(0);
 }
 /* Dark overlay */
 .hero__overlay {
