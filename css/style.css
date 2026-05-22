@@ -231,34 +231,24 @@ p { line-height: 1.75; }
   isolation: isolate;
 }
 
-/* Video background — top:-120px clips YT title bar via overflow:hidden on .hero */
+/* Video background */
 .hero__vid-wrap {
-  position: absolute;
-  top: -120px; left: 0; right: 0; bottom: 0;
+  position: absolute; inset: 0;
   overflow: hidden; z-index: 0; pointer-events: none;
 }
-#yt-bg {
+.hero__vid-wrap video {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 177.78vh;
-  height: 100vh;
-  min-width: 100%;
-  min-height: 56.25vw;
-  border: none;
-  pointer-events: none;
-}
-/* Explicit block div — GPU layer forces render above iframe compositing */
-.hero__vid-block {
-  position: absolute; inset: 0; z-index: 1;
-  transform: translateZ(0);
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto;
+  object-fit: cover;
 }
 /* Dark overlay */
 .hero__overlay {
   position: absolute; inset: 0;
-  background: rgba(5, 8, 15, 0.76);
-  z-index: 2; pointer-events: none;
-  transform: translateZ(0);
+  background: rgba(5, 8, 15, 0.72);
+  z-index: 1; pointer-events: none;
 }
 
 /* subtle dot grid — above overlay */
@@ -267,11 +257,11 @@ p { line-height: 1.75; }
   background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: radial-gradient(ellipse 60% 70% at 70% 30%, black 0%, transparent 80%);
-  opacity: 0.5; z-index: 3;
+  opacity: 0.5; z-index: 2;
 }
 
 /* Hero content layers above overlay */
-.hero__top, .hero__rule, .hero__bottom { position: relative; z-index: 4; }
+.hero__top, .hero__rule, .hero__bottom { position: relative; z-index: 3; }
 
 /* Text overrides for dark video hero */
 .hero .display { color: #fff; }
