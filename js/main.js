@@ -63,6 +63,38 @@ if (scanEl) {
   }, 2000);
 }
 
+// ===== YouTube hero background (loop 0:01 – 0:08) =====
+var ytPlayer;
+var YT_START = 1, YT_END = 8;
+window.onYouTubeIframeAPIReady = function() {
+  if (!document.getElementById('yt-bg')) return;
+  ytPlayer = new YT.Player('yt-bg', {
+    videoId: 'xhulhRiYiQw',
+    playerVars: {
+      autoplay: 1, mute: 1, controls: 0, disablekb: 1,
+      fs: 0, iv_load_policy: 3, modestbranding: 1,
+      playsinline: 1, rel: 0,
+      start: YT_START, end: YT_END,
+      loop: 1, playlist: 'xhulhRiYiQw'
+    },
+    events: {
+      onReady: function(e) { e.target.playVideo(); },
+      onStateChange: function(e) {
+        if (e.data === YT.PlayerState.ENDED) {
+          ytPlayer.seekTo(YT_START); ytPlayer.playVideo();
+        }
+      }
+    }
+  });
+  // Fallback poll to enforce loop bounds
+  setInterval(function() {
+    if (ytPlayer && ytPlayer.getCurrentTime) {
+      var t = ytPlayer.getCurrentTime();
+      if (t >= YT_END) { ytPlayer.seekTo(YT_START); }
+    }
+  }, 300);
+};
+
 // ===== Mouse glow on cards =====
 document.querySelectorAll('.pillar, .card, .partner-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {

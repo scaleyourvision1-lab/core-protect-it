@@ -227,17 +227,51 @@ p { line-height: 1.75; }
   min-height: 100vh; display: flex; flex-direction: column;
   justify-content: flex-end; padding: 0;
   position: relative; overflow: hidden;
-  background: var(--white);
+  background: var(--d);
 }
 
-/* subtle dot grid */
+/* Video background */
+.hero__vid-wrap {
+  position: absolute; inset: 0;
+  overflow: hidden; z-index: 0; pointer-events: none;
+}
+#yt-bg {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 177.78vh;   /* 16:9 cover */
+  height: 100vh;
+  min-width: 100%;
+  min-height: 56.25vw;
+  border: none;
+}
+
+/* Dark overlay over video */
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: rgba(5, 8, 15, 0.72);
+  z-index: 1; pointer-events: none;
+}
+
+/* subtle dot grid — above overlay */
 .hero::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(circle, #d0d0cc 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: radial-gradient(ellipse 60% 70% at 70% 30%, black 0%, transparent 80%);
-  opacity: 0.5;
+  opacity: 0.5; z-index: 2;
 }
+
+/* Hero content layers above overlay */
+.hero__top, .hero__rule, .hero__bottom { position: relative; z-index: 3; }
+
+/* Text overrides for dark video hero */
+.hero .display { color: #fff; }
+.hero .hero__desc { color: rgba(255,255,255,0.72); }
+.hero .hero__stat-num { color: #fff; }
+.hero .hero__stat-label { color: rgba(255,255,255,0.55); }
+.hero .hero__rule { background: rgba(255,255,255,0.1); }
+.hero .hero__stat-cell { border-color: rgba(255,255,255,0.1); }
 
 .hero__top {
   flex: 1; display: flex; align-items: center;
