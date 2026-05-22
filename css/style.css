@@ -230,15 +230,11 @@ p { line-height: 1.75; }
   background: var(--d);
 }
 
-/* Video background — top:-80px hides the YT title bar via overflow:hidden on .hero */
+/* Video background — top:-120px clips YT title bar via overflow:hidden on .hero */
 .hero__vid-wrap {
   position: absolute;
-  top: -80px; left: 0; right: 0; bottom: 0;
+  top: -120px; left: 0; right: 0; bottom: 0;
   overflow: hidden; z-index: 0; pointer-events: none;
-}
-/* Invisible block over iframe prevents YT controls on hover/click */
-.hero__vid-wrap::after {
-  content: ''; position: absolute; inset: 0; z-index: 1;
 }
 #yt-bg {
   position: absolute;
@@ -251,13 +247,16 @@ p { line-height: 1.75; }
   border: none;
   pointer-events: none;
 }
-
-/* Dark overlay — rendered above iframe via isolation */
+/* Explicit block div in HTML catches mouse events — YT controls never appear */
+.hero__vid-block {
+  position: absolute; inset: 0; z-index: 1;
+}
+/* Dark overlay */
 .hero__overlay {
   position: absolute; inset: 0;
   background: rgba(5, 8, 15, 0.76);
-  z-index: 1; pointer-events: none;
-  transform: translateZ(0); /* force compositing layer above iframe */
+  z-index: 2; pointer-events: none;
+  transform: translateZ(0);
 }
 
 /* subtle dot grid — above overlay */
@@ -266,11 +265,11 @@ p { line-height: 1.75; }
   background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: radial-gradient(ellipse 60% 70% at 70% 30%, black 0%, transparent 80%);
-  opacity: 0.5; z-index: 2;
+  opacity: 0.5; z-index: 3;
 }
 
 /* Hero content layers above overlay */
-.hero__top, .hero__rule, .hero__bottom { position: relative; z-index: 3; }
+.hero__top, .hero__rule, .hero__bottom { position: relative; z-index: 4; }
 
 /* Text overrides for dark video hero */
 .hero .display { color: #fff; }
