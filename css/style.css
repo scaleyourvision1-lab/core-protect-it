@@ -230,10 +230,15 @@ p { line-height: 1.75; }
   background: var(--d);
 }
 
-/* Video background */
+/* Video background — top:-80px hides the YT title bar via overflow:hidden on .hero */
 .hero__vid-wrap {
-  position: absolute; inset: 0;
+  position: absolute;
+  top: -80px; left: 0; right: 0; bottom: 0;
   overflow: hidden; z-index: 0; pointer-events: none;
+}
+/* Invisible block over iframe prevents YT controls on hover/click */
+.hero__vid-wrap::after {
+  content: ''; position: absolute; inset: 0; z-index: 1;
 }
 #yt-bg {
   position: absolute;
