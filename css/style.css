@@ -239,18 +239,20 @@ p { line-height: 1.75; }
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 177.78vh;   /* 16:9 cover */
+  width: 177.78vh;
   height: 100vh;
   min-width: 100%;
   min-height: 56.25vw;
   border: none;
+  pointer-events: none;
 }
 
-/* Dark overlay over video */
+/* Dark overlay — rendered above iframe via isolation */
 .hero__overlay {
   position: absolute; inset: 0;
-  background: rgba(5, 8, 15, 0.72);
+  background: rgba(5, 8, 15, 0.76);
   z-index: 1; pointer-events: none;
+  transform: translateZ(0); /* force compositing layer above iframe */
 }
 
 /* subtle dot grid — above overlay */
@@ -737,6 +739,7 @@ p { line-height: 1.75; }
   .wrap, .wrap--sm, .wrap--lg { padding: 0 20px; }
   .hero__top { padding: 90px 20px 40px; }
   .hero__visual { display: none; }
+  .hero__vid-wrap { display: none; }
   .hero__bottom { grid-template-columns: 1fr; padding: 0 20px; }
   .hero__stat-cell { border-right: none; border-bottom: 1px solid var(--rule); padding: 20px 0; }
   .hero__stat-cell:first-child { padding-left: 0; }
