@@ -735,7 +735,6 @@ p { line-height: 1.75; }
   .wrap, .wrap--sm, .wrap--lg { padding: 0 20px; }
   .hero__top { padding: 90px 20px 40px; }
   .hero__visual { display: none; }
-  .hero__vid-wrap { display: none; }
   .hero__bottom { grid-template-columns: 1fr; padding: 0 20px; }
   .hero__stat-cell { border-right: none; border-bottom: 1px solid var(--rule); padding: 20px 0; }
   .hero__stat-cell:first-child { padding-left: 0; }
