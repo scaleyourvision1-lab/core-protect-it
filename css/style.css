@@ -685,6 +685,7 @@ p { line-height: 1.75; }
   .nav__center { display: none; }
   .nav__right .nav__center-items { display: none; }
   .nav__status { display: none; }
+  .nav__right .btn { display: none; }
   .nav__burger { display: flex; }
   #mobileNav.open {
     display: flex; flex-direction: column;
